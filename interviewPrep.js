@@ -111,14 +111,14 @@
 
     // splice method and delete array 
 
-//     const ages=[5,6,3,90,50];
+ // const ages=[5,6,3,90,50];
 //      const updateages =ages.splice(4,0,1001);
 //      console.log(ages);
 
 //     //  const updatea=ages.splice(2,5,156600);
 //     //  console.log(ages);
 //      const updateag=ages.splice(2,1,156600);
-// console.log(ages);
+// console.log(updateag);
 
 
 // const updateage=ages.splice(2,2,156600);
@@ -153,3 +153,28 @@
 
 // var dat=new Date(2021,06,05,20,50,21,0);
 // console.log(dat.toLocaleString());
+
+// var inclu=['imran','sunnil','heri','neha'];
+// const result=inclu.includes('heri',3);
+// console.log(result);
+// console.log(inclu.lastIndexOf('heri',1));
+
+
+// search and update array
+ const update =['imran','sunnil','heri','neha'];
+//   const indexOfarray=update.indexOf('imran');
+//   console.log(indexOfarray);
+//   const newup=update.splice(0,1,"Imran");
+//   console.log(update);
+//   console.log(update.indexOf('heri'));
+//   const dele=update.splice(0,3);
+//   console.log(update);
+//   console.log(update);
+
+ const maparray=update.map((cur,index,array)=>{
+    return cur=="imran";
+ })
+ console.log(maparray);
+ const fruits ='hello Lion is king of the jungle';
+ newLenght=fruits.slice(0,6);
+ console.log(newLenght);

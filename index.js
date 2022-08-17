@@ -152,42 +152,42 @@
 
   //  Coding challenge #13: Find the maximum number in an array of numbers
 
-  var maxnumber=[100,20,1,54,60,401];
+//   var maxnumber=[100,20,1,54,60,401];
    
-  function max(maxnumber) {
-    var numbermax=maxnumber[0];
-    for(i=1;i<maxnumber.length;i++){
-      if(maxnumber[i] > numbermax){
-         numbermax=maxnumber[i];
-      }
-    }
-    return numbermax;
-  }
- var no= max(maxnumber);
- console.log(no);
+//   function max(maxnumber) {
+//     var numbermax=maxnumber[0];
+//     for(i=1;i<maxnumber.length;i++){
+//       if(maxnumber[i] > numbermax){
+//          numbermax=maxnumber[i];
+//       }
+//     }
+//     return numbermax;
+//   }
+//  var no= max(maxnumber);
+//  console.log(no);
 
 
 // find a minmium number of array 
 //step1  array = [3,4,2,1,4]
 // step2  array supppose arry[0] < array[1]
 
-function minNumber(arr) {
+// function minNumber(arr) {
    
-  if(!arr.length){
-    throw new Error('array sholud not be empty');
-   }
-    var min = arr[0]; 
-   for (let i = 1; i < arr.length; i++) {
-    if(arr[i] < min){
-      min = arr[i]
-    }
+//   if(!arr.length){
+//     throw new Error('array sholud not be empty');
+//    }
+//     var min = arr[0]; 
+//    for (let i = 1; i < arr.length; i++) {
+//     if(arr[i] < min){
+//       min = arr[i]
+//     }
     
-   }
-   return min;
-}
-var arr=[4,3,8,6,8];
-  var result= minNumber(arr);
-  console.log(result);
+//    }
+//    return min;
+// }
+// var arr=[4,3,8,6,8];
+//   var result= minNumber(arr);
+//   console.log(result);
 
   // find the max number
 
@@ -197,62 +197,151 @@ var arr=[4,3,8,6,8];
   //   array[i] =arr[0];
   // ruturn arr[0];
 
-  function maxNumber(arr1) {
-    if(!arr1.length){
-      console.log("array sholud not be empty");
-    }
-    else if(arr1.length==1){
-      console.log(arr1);
-    }
-    else{
-      var max=arr1[0];
-      for( var i=1;i<arr1.length;i++){
-        if(arr1[i]> max){
-          max=arr1[i];
-        }
-      }
-      return max;
-    }
-  }
-   const maxresult=maxNumber([45,100,698,1440]);
-   console.log(maxresult);
+  // function maxNumber(arr1) {
+  //   if(!arr1.length){
+  //     console.log("array sholud not be empty");
+  //   }
+  //   else if(arr1.length==1){
+  //     console.log(arr1);
+  //   }
+  //   else{
+  //     var max=arr1[0];
+  //     for( var i=1;i<arr1.length;i++){
+  //       if(arr1[i]> max){
+  //         max=arr1[i];
+  //       }
+  //     }
+  //     return max;
+  //   }
+  // }
+  //  const maxresult=maxNumber([45,100,698,1440]);
+  //  console.log(maxresult);
 
   //  find minimum number with different appraoch
-    [2,6,7,10];
+    // [2,6,7,10];
 
   // fisrt i will sort array and will access first elementt 
   // then call comapare to next element fisrt[0] > sencod[1] swap second[1]== first[0]
   // then fisrt index will check to third index secoond[1]> third[i] third[i]=second[i]  
   // and repeat till end
 
-  function mini(array) {
-    for (let i = 0; i < array.length; i++) {
-          let outernumber=array[i];
-          for (let j =i+1 ; j < array.length; j++) {
-              let innernumber =array[j];
-               if (outernumber>innernumber) {
-                array[i]=innernumber;
-                array[j]=outernumber;
-                outernumber=array[j];
-                innernumber=array[i];
-                } 
-              }
-            }
-            return array[0]
-          }
-const result3=mini([5,1,6,3])
-console.log(result3);
+// log approach will take more time then fisrt one
+//   function mini(array) {
+//     for (let i = 0; i < array.length; i++) {
+//           let outernumber=array[i];
+//           for (let j =i+1 ; j < array.length; j++) {
+//               let innernumber =array[j];
+//                if (outernumber>innernumber) {
+//                 array[i]=innernumber;
+//                 array[j]=outernumber;
+//                 outernumber=array[j];
+//                 innernumber=array[i];
+//                 } 
+//               }
+//             }
+//             return array[0]
+//           }
+// const result3=mini([5,1,6,3])
+// console.log(result3);
 
 //squre with given array
 
 // [2,4,6,1,7,5]-->[4,16,36,49,25]
  
-function findSqure(square) {
-  const Square=square.map((ele)=>ele*ele)
-  return Square;
-}
- var square1=findSqure([2,9,4,2,1,6]);
-console.log(square1);
+// function findSqure(square) {
+//   const Square=square.map((ele)=>ele*ele)
+//   return Square;
+// }
+//  var square1=findSqure([2,9,4,2,1,6]);
+// console.log(square1);
            
           
-      
+ // find a 2 number in array whose sum is zero;
+ 
+ function sumToZero(sumarray) {
+  if(!sumarray.length){
+    throw console.log("array should not be empyt");
+  }
+  if(sumarray.length==1){
+    console.log("must be 2 number");
+  }
+  // if(sumarray<0 && sumarray >0){
+  //   console.log('array must have one positive number and one negative number');
+  // }
+  for(var i=0;i<sumarray.length-1;i++){
+    // console.log(i);
+    // console.log(sumarray[i]);
+    var num=0;
+    var negative;
+    var positive;
+    if(sumarray[i] < num){
+       negative= sumarray[i]
+      console.log( "negative number" + "=" + negative);
+    }
+    if(sumarray[i]>num){
+      positive=sumarray[i]
+      console.log("positive number " + "=" + positive);
+    }
+    if(negative === num){
+    console.log("negative number " + negative + "positive number" + positive + "==" + num );
+    }
+  }
+  // console.log(positive);
+  // return negative , positive;
+}
+  var sumZero=sumToZero([-5,6,-4,3,0,1,33,-7,-5,45]);
+  console.log(sumZero);  
+
+  // not getting answer
+  // another method Means try
+
+  // compare fisrt element to all element to check is true or not 
+
+  // array [ -4,- 6, 2, -1,9,7,6,-8 ]
+
+//   function zero(SumZero) {
+//     let start=SumZero[0];
+
+//     for(let i=1;i<SumZero.length;i++){
+//       if(SumZero[i]== +start){
+        
+//       }
+//     }
+//   }
+// var ss= zero([-4,- 6, 2, -1,9,7,6,-8]);
+// console.log(ss);
+
+  // different apparoch
+
+  function getnumber(array) {
+    for(let number of array){
+      for(var i=1;i<array.length;i++){
+        if(number + array[i] === 0 ){
+          return [number,array[i]]
+        }
+      }
+    }
+  }
+  const result=getnumber([-3,-5,8,-6,-4,-4,-8])
+  console.log(result);
+
+
+  // different approach  keep pointer both side and compare with start point to last point 
+
+  function pointerSum(array) {
+    var left=array[0];
+    var right=array.length-1;
+    while(left < right){
+     let sum = array[left] + array[right];
+      if(sum===0){
+      return [array[left],array[right]]
+      }
+     else if(sum>0){
+        right--;
+      }else{
+        left++;
+    }
+    }
+  }
+  const result1=pointerSum([-5,-4,-3,7,-2,-1,0,1,-5,9,-7,10])
+  console.log(result1);
